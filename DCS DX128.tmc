@@ -20,7 +20,7 @@ int main()
 	printf ("\xaLoading DCS DX128\xa");
 	
 	//----------------------------------------------------------------------------------------------//
-	//Joystick
+	//Joystick, DX1+
 	MapKey	(&Joystick, TG1,	DX1);
 	MapKey	(&Joystick, TG2,	DX2);
 	
@@ -50,99 +50,107 @@ int main()
 	MapKey	(&Joystick, H1L,	DX22);
 	MapKey	(&Joystick, H1R,	DX23);
 	
-	
+	//DX100+
 	MapAxis		(&Joystick, JOYX, DX_X_AXIS, AXIS_NORMAL, MAP_ABSOLUTE);
 	SetSCurve	(&Joystick, JOYX, 0, 1, 0, 1, 0);
+	KeyAxis		(&Throttle, JOYX, 0, AXMAP1(LIST(0,1,99,100), DX100, DX101, PULSE+DX102));
+	
 	MapAxis		(&Joystick, JOYY, DX_Y_AXIS, AXIS_NORMAL, MAP_ABSOLUTE);
 	SetSCurve	(&Joystick, JOYY, 0, 1, 0, 0, 0);
+	KeyAxis		(&Throttle, JOYY, 0, AXMAP1(LIST(0,1,99,100), DX103, DX104, PULSE+DX105));
 	
 	printf ("\xaJoystick Mapping Loaded \xa");
 	
 	//----------------------------------------------------------------------------------------------//
-	//Throttle
-	MapKey	(&Throttle, CSU,	DX24);
-	MapKey	(&Throttle, CSD,	DX25);
-	MapKey	(&Throttle, CSR,	DX26);
-	MapKey	(&Throttle, CSL,	DX27);
+	//Throttle, DX30+
+	MapKey	(&Throttle, CSU,	DX30);
+	MapKey	(&Throttle, CSD,	DX31);
+	MapKey	(&Throttle, CSR,	DX32);
+	MapKey	(&Throttle, CSL,	DX33);
 	
-	MapKey	(&Throttle, MSP,	DX28);
-	MapKey	(&Throttle, MSU,	DX29);
-	MapKey	(&Throttle, MSR,	DX30);
-	MapKey	(&Throttle, MSD,	DX31);
-	MapKey	(&Throttle, MSL,	DX32);
+	MapKey	(&Throttle, MSP,	DX34);
+	MapKey	(&Throttle, MSU,	DX35);
+	MapKey	(&Throttle, MSR,	DX36);
+	MapKey	(&Throttle, MSD,	DX37);
+	MapKey	(&Throttle, MSL,	DX38);
 	
-	MapKey	(&Throttle, SC,		L_CTL+L_ALT+F1);
+	MapKey	(&Throttle, SC,		DX39);
 	
-	MapKey	(&Throttle, SPDF,	DX34);
-	MapKey	(&Throttle, SPDB,	DX35);
+	MapKey	(&Throttle, SPDF,	DX40);
+	MapKey	(&Throttle, SPDB,	DX41);
 	
-	MapKey	(&Throttle, BSF,	PULSE+DX36);
-	MapKey	(&Throttle, BSM,	PULSE+DX37);
-	MapKey	(&Throttle, BSB,	PULSE+DX38);
+	MapKey	(&Throttle, BSF,	PULSE+DX42);
+	MapKey	(&Throttle, BSM,	PULSE+DX43);
+	MapKey	(&Throttle, BSB,	PULSE+DX44);
 	
-	MapKey	(&Throttle, CHF,	DX39);
-	MapKey	(&Throttle, CHB,	DX40);
+	MapKey	(&Throttle, CHF,	DX45);
+	MapKey	(&Throttle, CHB,	DX46);
 	
-	MapKey	(&Throttle, PSF,	PULSE+DX41);
-	MapKey	(&Throttle, PSM,	PULSE+DX42);
-	MapKey	(&Throttle, PSB,	PULSE+DX43);
+	MapKey	(&Throttle, PSF,	PULSE+DX47);
+	MapKey	(&Throttle, PSM,	PULSE+DX48);
+	MapKey	(&Throttle, PSB,	PULSE+DX49);
 	
-	MapKey	(&Throttle, FLAPU,		PULSE+DX44);
-	MapKeyR	(&Throttle, FLAPU,		DX45);
-	MapKey	(&Throttle, FLAPD,		PULSE+DX46);
-	MapKeyR	(&Throttle, FLAPD,		DX73);
+	MapKey	(&Throttle, FLAPU,		PULSE+DX50);
+	MapKeyR	(&Throttle, FLAPU,		DX51);
+	MapKey	(&Throttle, FLAPD,		PULSE+DX52);
+	MapKeyR	(&Throttle, FLAPD,		DX53);
 	
-	MapKey	(&Throttle, LTB,		DX47);
+	MapKey	(&Throttle, LTB,		DX54);
 	
-	MapKey	(&Throttle, EFLNORM,	PULSE+DX48);
-	MapKey	(&Throttle, EFRNORM,	PULSE+DX49);
-	MapKey	(&Throttle, EFLOVER,	PULSE+DX50);
-	MapKey	(&Throttle, EFROVER,	PULSE+DX51);
+	MapKey	(&Throttle, EFLNORM,	PULSE+DX55);
+	MapKey	(&Throttle, EFLOVER,	PULSE+DX56);
 	
-	MapKey	(&Throttle, EOLIGN,		DX52);
-	MapKey	(&Throttle, EORIGN,		DX53);
-	MapKey	(&Throttle, EOLNORM,	PULSE+DX54);
-	MapKey	(&Throttle, EORNORM,	PULSE+DX55);
-	MapKey	(&Throttle, EOLMOTOR,	PULSE+DX56);
-	MapKey	(&Throttle, EORMOTOR,	PULSE+DX57);
+	MapKey	(&Throttle, EFRNORM,	PULSE+DX57);
+	MapKey	(&Throttle, EFROVER,	PULSE+DX58);
 	
-	MapKey	(&Throttle, APUON,		PULSE+DX58);
-	MapKey	(&Throttle, APUOFF,		PULSE+DX59);
-	MapKey	(&Throttle, LDGH,		DX60);
-	MapKey	(&Throttle, EACON,		PULSE+DX61);
-	MapKey	(&Throttle, EACOFF,		PULSE+DX62);
-	MapKey	(&Throttle, RDRNRM,		PULSE+DX63);
-	MapKey	(&Throttle, RDRDIS,		PULSE+DX64);
+	MapKey	(&Throttle, EOLIGN,		DX59);
+	MapKey	(&Throttle, EOLNORM,	PULSE+DX60);
+	MapKey	(&Throttle, EOLMOTOR,	PULSE+DX61);
 	
-	MapKey	(&Throttle, APPAT,		PULSE+DX65);
-	MapKey	(&Throttle, APAH,		PULSE+DX66);
-	MapKey	(&Throttle, APALT,		PULSE+DX67);
+	MapKey	(&Throttle, EORIGN,		DX62);
+	MapKey	(&Throttle, EORNORM,	PULSE+DX63);
+	MapKey	(&Throttle, EORMOTOR,	PULSE+DX64);
 	
-	MapKey	(&Throttle, APDIS,		UP+DX68);
-	MapKeyR	(&Throttle, APDIS,		DOWN+DX68);
+	MapKey	(&Throttle, APUON,		PULSE+DX65);
+	MapKey	(&Throttle, APUOFF,		PULSE+DX66);
+	MapKey	(&Throttle, LDGH,		DX67);
+	MapKey	(&Throttle, EACON,		PULSE+DX68);
+	MapKey	(&Throttle, EACOFF,		PULSE+DX69);
+	MapKey	(&Throttle, RDRNRM,		PULSE+DX70);
+	MapKey	(&Throttle, RDRDIS,		PULSE+DX71);
 	
-	MapKey	(&Throttle, IDLERON,	PULSE+DX69);
-	MapKey	(&Throttle, IDLELON,	PULSE+DX70);
-	MapKeyR	(&Throttle, IDLERON,	PULSE+DX71);
-	MapKeyR	(&Throttle, IDLELON,	PULSE+DX72);
+	MapKey	(&Throttle, APPAT,		PULSE+DX72);
+	MapKey	(&Throttle, APAH,		PULSE+DX73);
+	MapKey	(&Throttle, APALT,		PULSE+DX74);
 	
+	MapKey	(&Throttle, APDIS,		UP+DX75);
+	MapKeyR	(&Throttle, APDIS,		DOWN+DX75);
 	
+	MapKey	(&Throttle, IDLERON,	PULSE+DX76);
+	MapKeyR	(&Throttle, IDLERON,	PULSE+DX77);
+	MapKey	(&Throttle, IDLELON,	PULSE+DX78);
+	MapKeyR	(&Throttle, IDLELON,	PULSE+DX79);
+	
+	//DX106+
 	MapAxis		(&Throttle, SCX, DX_XROT_AXIS, AXIS_NORMAL, MAP_ABSOLUTE);
 	SetSCurve	(&Throttle, SCX, 0, 5, 0, 5, 0);
+	KeyAxis		(&Throttle, SCX, 0, AXMAP1(LIST(0,1,99,100), PULSE+DX106, PULSE+DX107, PULSE+DX108));
+	
 	MapAxis		(&Throttle, SCY, DX_YROT_AXIS, AXIS_NORMAL, MAP_ABSOLUTE);
 	SetSCurve	(&Throttle, SCY, 0, 5, 0, 5, 0);
+	KeyAxis		(&Throttle, SCY, 0, AXMAP1(LIST(0,1,99,100), PULSE+DX109, PULSE+DX110, PULSE+DX111));
 	
 	MapAxis		(&Throttle, THR_RIGHT, DX_Z_AXIS, AXIS_NORMAL, MAP_ABSOLUTE);
 	SetSCurve	(&Throttle, THR_RIGHT, 0, 0, 0, 0, 0);
-	KeyAxis		(&Throttle, THR_RIGHT, 0, AXMAP1(LIST(0,99,100), PULSE+DX74, PULSE+DX75));
+	KeyAxis		(&Throttle, THR_RIGHT, 0, AXMAP1(LIST(0,1,99,100), PULSE+DX112, PULSE+DX113, PULSE+DX114));
 	
 	MapAxis		(&Throttle, THR_LEFT, DX_ZROT_AXIS, AXIS_NORMAL, MAP_ABSOLUTE);
 	SetSCurve	(&Throttle, THR_LEFT, 0, 0, 0, 0, 0);
-	KeyAxis		(&Throttle, THR_LEFT, 0, AXMAP1(LIST(0,99,100), PULSE+DX76, PULSE+DX77));
+	KeyAxis		(&Throttle, THR_LEFT, 0, AXMAP1(LIST(0,1,99,100), PULSE+DX115, PULSE+DX116, PULSE+DX117));
 	
 	MapAxis		(&Throttle, THR_FC, DX_SLIDER_AXIS, AXIS_NORMAL, MAP_ABSOLUTE);
 	SetSCurve	(&Throttle, THR_FC, 0, 0, 0, 0, 0);
-	KeyAxis		(&Throttle, THR_FC, 0, AXMAP1(LIST(0,1,99,100), DX79, DX80, PULSE+DX81));
+	KeyAxis		(&Throttle, THR_FC, 0, AXMAP1(LIST(0,1,99,100), DX118, DX119, PULSE+DX120));
 	
 
 	printf ("Throttle Mapping Loaded\xa");
@@ -150,7 +158,7 @@ int main()
 	//LEDs Intensity and state
 	ActKey( PULSE+KEYON+LED(&Throttle, LED_ONOFF, LED_CURRENT-LED0-LED1-LED2-LED3-LED4-LED5));
 	ActKey( PULSE+KEYON+LED(&Throttle, LED_INTENSITY, LED_BRIGHTNESS*43));
-	printf ("LEDs Set, Intensity: %d/5\xa", LED_BRIGHTNESS);
+	printf( "LEDs Set, Intensity: %d/5\xa", LED_BRIGHTNESS);
 	
 	ActKey( PULSE+KEYON+REXEC(1, 100, "led_update();", RNOSTOP));
 }
@@ -159,7 +167,6 @@ int EventHandle(int type, alias o, int x)
 {
 	DefaultMapping(&o, x);
 }
-
 
 //CUSTOM FUNCTION
 int led_update()
