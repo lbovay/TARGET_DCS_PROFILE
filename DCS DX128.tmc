@@ -1,0 +1,217 @@
+include "targetdx128.tmh"
+
+define	LED_BRIGHTNESS		1		//Leds intensity ranging 0-5
+
+int main()
+{
+	Configure(&HCougar,			MODE_EXCLUDED);
+	Configure(&T16000,			MODE_EXCLUDED);
+	Configure(&T16000L,			MODE_EXCLUDED);
+	Configure(&LMFD,			MODE_EXCLUDED);
+	Configure(&RMFD,			MODE_EXCLUDED);
+	Configure(&TWCSThrottle,	MODE_EXCLUDED);
+	Configure(&TFRPRudder,		MODE_EXCLUDED);
+	
+	if(Init(&EventHandle)) return 1;
+	
+	SetKBRate(50, 100);
+	SetKBLayout(KB_ENG);
+	
+	printf ("\xaLoading DCS DX128\xa");
+	
+	//----------------------------------------------------------------------------------------------//
+	//Joystick
+	MapKey	(&Joystick, TG1,	DX1);
+	MapKey	(&Joystick, TG2,	DX2);
+	
+	MapKey	(&Joystick, S1,		DX3);
+	MapKey	(&Joystick, S2,		DX4);
+	MapKey	(&Joystick, S3,		DX5);
+	MapKey	(&Joystick, S4,		DX6);
+	
+	MapKey	(&Joystick, H2U,	DX7);
+	MapKey	(&Joystick, H2R,	DX8);
+	MapKey	(&Joystick, H2D,	DX9);
+	MapKey	(&Joystick, H2L,	DX10);
+									
+	MapKey	(&Joystick, H3U,	DX11);
+	MapKey	(&Joystick, H3R,	DX12);
+	MapKey	(&Joystick, H3D,	DX13);
+	MapKey	(&Joystick, H3L,	DX14);
+	
+	MapKey	(&Joystick, H4U,	DX15);
+	MapKey	(&Joystick, H4R,	DX16);
+	MapKey	(&Joystick, H4D,	DX17);
+	MapKey	(&Joystick, H4L,	DX18);
+	MapKey	(&Joystick, H4P,	DX19);
+									
+	MapKey	(&Joystick, H1U,	DX20);
+	MapKey	(&Joystick, H1D,	DX21);
+	MapKey	(&Joystick, H1L,	DX22);
+	MapKey	(&Joystick, H1R,	DX23);
+	
+	
+	MapAxis		(&Joystick, JOYX, DX_X_AXIS, AXIS_NORMAL, MAP_ABSOLUTE);
+	SetSCurve	(&Joystick, JOYX, 0, 1, 0, 1, 0);
+	MapAxis		(&Joystick, JOYY, DX_Y_AXIS, AXIS_NORMAL, MAP_ABSOLUTE);
+	SetSCurve	(&Joystick, JOYY, 0, 1, 0, 0, 0);
+	
+	printf ("\xaJoystick Mapping Loaded \xa");
+	
+	//----------------------------------------------------------------------------------------------//
+	//Throttle
+	MapKey	(&Throttle, CSU,	DX24);
+	MapKey	(&Throttle, CSD,	DX25);
+	MapKey	(&Throttle, CSR,	DX26);
+	MapKey	(&Throttle, CSL,	DX27);
+	
+	MapKey	(&Throttle, MSP,	DX28);
+	MapKey	(&Throttle, MSU,	DX29);
+	MapKey	(&Throttle, MSR,	DX30);
+	MapKey	(&Throttle, MSD,	DX31);
+	MapKey	(&Throttle, MSL,	DX32);
+	
+	MapKey	(&Throttle, SC,		L_CTL+L_ALT+F1);
+	
+	MapKey	(&Throttle, SPDF,	DX34);
+	MapKey	(&Throttle, SPDB,	DX35);
+	
+	MapKey	(&Throttle, BSF,	PULSE+DX36);
+	MapKey	(&Throttle, BSM,	PULSE+DX37);
+	MapKey	(&Throttle, BSB,	PULSE+DX38);
+	
+	MapKey	(&Throttle, CHF,	DX39);
+	MapKey	(&Throttle, CHB,	DX40);
+	
+	MapKey	(&Throttle, PSF,	PULSE+DX41);
+	MapKey	(&Throttle, PSM,	PULSE+DX42);
+	MapKey	(&Throttle, PSB,	PULSE+DX43);
+	
+	MapKey	(&Throttle, FLAPU,		PULSE+DX44);
+	MapKeyR	(&Throttle, FLAPU,		DX45);
+	MapKey	(&Throttle, FLAPD,		PULSE+DX46);
+	MapKeyR	(&Throttle, FLAPD,		DX73);
+	
+	MapKey	(&Throttle, LTB,		DX47);
+	
+	MapKey	(&Throttle, EFLNORM,	PULSE+DX48);
+	MapKey	(&Throttle, EFRNORM,	PULSE+DX49);
+	MapKey	(&Throttle, EFLOVER,	PULSE+DX50);
+	MapKey	(&Throttle, EFROVER,	PULSE+DX51);
+	
+	MapKey	(&Throttle, EOLIGN,		DX52);
+	MapKey	(&Throttle, EORIGN,		DX53);
+	MapKey	(&Throttle, EOLNORM,	PULSE+DX54);
+	MapKey	(&Throttle, EORNORM,	PULSE+DX55);
+	MapKey	(&Throttle, EOLMOTOR,	PULSE+DX56);
+	MapKey	(&Throttle, EORMOTOR,	PULSE+DX57);
+	
+	MapKey	(&Throttle, APUON,		PULSE+DX58);
+	MapKey	(&Throttle, APUOFF,		PULSE+DX59);
+	MapKey	(&Throttle, LDGH,		DX60);
+	MapKey	(&Throttle, EACON,		PULSE+DX61);
+	MapKey	(&Throttle, EACOFF,		PULSE+DX62);
+	MapKey	(&Throttle, RDRNRM,		PULSE+DX63);
+	MapKey	(&Throttle, RDRDIS,		PULSE+DX64);
+	
+	MapKey	(&Throttle, APPAT,		PULSE+DX65);
+	MapKey	(&Throttle, APAH,		PULSE+DX66);
+	MapKey	(&Throttle, APALT,		PULSE+DX67);
+	
+	MapKey	(&Throttle, APDIS,		UP+DX68);
+	MapKeyR	(&Throttle, APDIS,		DOWN+DX68);
+	
+	MapKey	(&Throttle, IDLERON,	PULSE+DX69);
+	MapKey	(&Throttle, IDLELON,	PULSE+DX70);
+	MapKeyR	(&Throttle, IDLERON,	PULSE+DX71);
+	MapKeyR	(&Throttle, IDLELON,	PULSE+DX72);
+	
+	
+	MapAxis		(&Throttle, SCX, DX_XROT_AXIS, AXIS_NORMAL, MAP_ABSOLUTE);
+	SetSCurve	(&Throttle, SCX, 0, 5, 0, 5, 0);
+	MapAxis		(&Throttle, SCY, DX_YROT_AXIS, AXIS_NORMAL, MAP_ABSOLUTE);
+	SetSCurve	(&Throttle, SCY, 0, 5, 0, 5, 0);
+	
+	MapAxis		(&Throttle, THR_RIGHT, DX_Z_AXIS, AXIS_NORMAL, MAP_ABSOLUTE);
+	SetSCurve	(&Throttle, THR_RIGHT, 0, 0, 0, 0, 0);
+	KeyAxis		(&Throttle, THR_RIGHT, 0, AXMAP1(LIST(0,99,100), PULSE+DX74, PULSE+DX75));
+	
+	MapAxis		(&Throttle, THR_LEFT, DX_ZROT_AXIS, AXIS_NORMAL, MAP_ABSOLUTE);
+	SetSCurve	(&Throttle, THR_LEFT, 0, 0, 0, 0, 0);
+	KeyAxis		(&Throttle, THR_LEFT, 0, AXMAP1(LIST(0,99,100), PULSE+DX76, PULSE+DX77));
+	
+	MapAxis		(&Throttle, THR_FC, DX_SLIDER_AXIS, AXIS_NORMAL, MAP_ABSOLUTE);
+	SetSCurve	(&Throttle, THR_FC, 0, 0, 0, 0, 0);
+	KeyAxis		(&Throttle, THR_FC, 0, AXMAP1(LIST(0,1,99,100), DX79, DX80, PULSE+DX81));
+	
+
+	printf ("Throttle Mapping Loaded\xa");
+	
+	//LEDs Intensity and state
+	ActKey( PULSE+KEYON+LED(&Throttle, LED_ONOFF, LED_CURRENT-LED0-LED1-LED2-LED3-LED4-LED5));
+	ActKey( PULSE+KEYON+LED(&Throttle, LED_INTENSITY, LED_BRIGHTNESS*43));
+	printf ("LEDs Set, Intensity: %d/5\xa", LED_BRIGHTNESS);
+	
+	ActKey( PULSE+KEYON+REXEC(1, 100, "led_update();", RNOSTOP));
+}
+
+int EventHandle(int type, alias o, int x)
+{
+	DefaultMapping(&o, x);
+}
+
+
+//CUSTOM FUNCTION
+int led_update()
+{
+	int 	file;
+	char 	L0, L1, L2, L3, L4, L5, aircraft_id;
+	
+    file = fopen("C://Users//lbova//Documents//Thrustmaster TARGET Scripts//ThrustmasterTarget.log", "r");
+    
+	aircraft_id =fgetc(file);  
+    L0 			=fgetc(file);
+    L1 			=fgetc(file);
+    L2 			=fgetc(file);
+    L3 			=fgetc(file);
+    L4			=fgetc(file);
+    L5			=fgetc(file);
+    
+    fclose(file);
+    
+    if ((aircraft_id =='W') & (Throttle[PSF] | Throttle[PSB]))
+    	L3 ='1';
+    //else if ((aircraft_id =='M') & (Throttle[PSF] | Throttle[PSB]))
+    //	L3 ='1';
+    
+    if (L0 =='1')
+    	ActKey(PULSE+KEYON+LED(&Throttle, LED_ONOFF, LED_CURRENT+LED0));
+    else
+    	ActKey(PULSE+KEYON+LED(&Throttle, LED_ONOFF, LED_CURRENT-LED0));
+    	
+    if (L1 =='1')
+    	ActKey(PULSE+KEYON+LED(&Throttle, LED_ONOFF, LED_CURRENT+LED1));
+    else
+    	ActKey(PULSE+KEYON+LED(&Throttle, LED_ONOFF, LED_CURRENT-LED1));
+    	
+    if (L2 =='1')
+    	ActKey(PULSE+KEYON+LED(&Throttle, LED_ONOFF, LED_CURRENT+LED2));
+    else
+    	ActKey(PULSE+KEYON+LED(&Throttle, LED_ONOFF, LED_CURRENT-LED2));
+    
+    if (L3 =='1')
+    	ActKey(PULSE+KEYON+LED(&Throttle, LED_ONOFF, LED_CURRENT+LED3));
+    else
+    	ActKey(PULSE+KEYON+LED(&Throttle, LED_ONOFF, LED_CURRENT-LED3));
+    
+    if (L4 =='1')
+    	ActKey(PULSE+KEYON+LED(&Throttle, LED_ONOFF, LED_CURRENT+LED4));
+    else
+    	ActKey(PULSE+KEYON+LED(&Throttle, LED_ONOFF, LED_CURRENT-LED4));
+    
+    if (L5 =='1')
+    	ActKey(PULSE+KEYON+LED(&Throttle, LED_ONOFF, LED_CURRENT+LED5));
+    else
+    	ActKey(PULSE+KEYON+LED(&Throttle, LED_ONOFF, LED_CURRENT-LED5));
+
+}
