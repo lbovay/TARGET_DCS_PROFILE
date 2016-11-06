@@ -14,7 +14,7 @@
 //
 // Here you can define the available DX button you want for
 // the virtual device. This value MUST be less or equal to 120.
-define DXBTCOUNT 120
+define DXBTCOUNT 128
 
 // TARGET definitions
 // Copyright (c) Thrustmaster
@@ -203,12 +203,16 @@ int Select(alias id)
 // total of 128 input.
 //
 //                    BUT         HAT X   Y   Z   Rx  Ry  Rz Thrtl SLD1 SLD2 SLD3 SLD4
-stGameCfg virtualj = { DXBTCOUNT, 1,  1,  1,  1,  1,  1,  1,    1,   1,   0,   0,   0};
+//stGameCfg virtualj = { DXBTCOUNT, 1,  1,  1,  1,  1,  1,  1,    1,   1,   0,   0,   0};
+//Removed unuser HAT in favor of 8 more buttons
+stGameCfg virtualj = { DXBTCOUNT, 0,  1,  1,  1,  1,  1,  1,    1,   1,   0,   0,   0};
 
 define CREATE_JOYSTICK	1
 define CREATE_KEYBOARD	2
 define CREATE_MOUSE		4
-int Init(alias h, int cfg=CREATE_JOYSTICK+CREATE_KEYBOARD+CREATE_MOUSE)
+//int Init(alias h, int cfg=CREATE_JOYSTICK+CREATE_KEYBOARD+CREATE_MOUSE)
+//Removed unused virtual peripherals
+int Init(alias h, int cfg=CREATE_JOYSTICK)
 { 
 	&Throttle = GetIndexJoy(Select(&Throttle));	// expect a Warthog Throttle to be plugged on USB
 	&Joystick = GetIndexJoy(Select(&Joystick));	// expect a Warthog Stick to be plugged on USB
@@ -968,3 +972,13 @@ define DX117		3116
 define DX118		3117
 define DX119		3118
 define DX120		3119
+
+//Added 8 buttons instead of POV HAT
+define DX121		3120
+define DX122		3121
+define DX123		3122
+define DX124		3123
+define DX125		3124
+define DX126		3125
+define DX127		3126
+define DX128		3127
