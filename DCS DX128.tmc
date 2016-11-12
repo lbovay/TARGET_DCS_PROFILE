@@ -77,7 +77,9 @@ int main()
 	MapKey	(&Throttle, SC,		DX39);
 	
 	MapKey	(&Throttle, SPDF,	DX40);
+	MapKeyR	(&Throttle, SPDF,	DX80);
 	MapKey	(&Throttle, SPDB,	DX41);
+	MapKeyR	(&Throttle, SPDB,	DX81);
 	
 	MapKey	(&Throttle, BSF,	PULSE+DX42);
 	MapKey	(&Throttle, BSM,	PULSE+DX43);
