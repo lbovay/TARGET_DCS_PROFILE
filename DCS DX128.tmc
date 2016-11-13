@@ -125,8 +125,8 @@ int main()
 	MapKey	(&Throttle, APAH,		PULSE+DX73);
 	MapKey	(&Throttle, APALT,		PULSE+DX74);
 	
-	MapKey	(&Throttle, APDIS,		UP+DX75);
-	MapKeyR	(&Throttle, APDIS,		DOWN+DX75);
+	MapKey	(&Throttle, APDIS,		CHAIN(UP+DX75, UP+DX82));
+	MapKeyR	(&Throttle, APDIS,		CHAIN(DOWN+DX75, DOWN+DX82));
 	
 	MapKey	(&Throttle, IDLERON,	PULSE+DX76);
 	MapKeyR	(&Throttle, IDLERON,	PULSE+DX77);
