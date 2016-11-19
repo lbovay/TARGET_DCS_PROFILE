@@ -77,61 +77,61 @@ int main()
 	MapKey	(&Throttle, SC,		DX39);
 	
 	MapKey	(&Throttle, SPDF,	DX40);
-	MapKeyR	(&Throttle, SPDF,	DX80);
-	MapKey	(&Throttle, SPDB,	DX41);
-	MapKeyR	(&Throttle, SPDB,	DX81);
+	MapKeyR	(&Throttle, SPDF,	DX41);
+	MapKey	(&Throttle, SPDB,	DX42);
+	MapKeyR	(&Throttle, SPDB,	DX43);
 	
-	MapKey	(&Throttle, BSF,	PULSE+DX42);
-	MapKey	(&Throttle, BSM,	PULSE+DX43);
-	MapKey	(&Throttle, BSB,	PULSE+DX44);
+	MapKey	(&Throttle, BSF,	PULSE+DX44);
+	MapKey	(&Throttle, BSM,	PULSE+DX45);
+	MapKey	(&Throttle, BSB,	PULSE+DX46);
 	
-	MapKey	(&Throttle, CHF,	DX45);
-	MapKey	(&Throttle, CHB,	DX46);
+	MapKey	(&Throttle, CHF,	DX47);
+	MapKey	(&Throttle, CHB,	DX48);
 	
-	MapKey	(&Throttle, PSF,	PULSE+DX47);
-	MapKey	(&Throttle, PSM,	PULSE+DX48);
-	MapKey	(&Throttle, PSB,	PULSE+DX49);
+	MapKey	(&Throttle, PSF,	PULSE+DX49);
+	MapKey	(&Throttle, PSM,	PULSE+DX50);
+	MapKey	(&Throttle, PSB,	PULSE+DX51);
 	
-	MapKey	(&Throttle, FLAPU,		PULSE+DX50);
-	MapKeyR	(&Throttle, FLAPU,		DX51);
-	MapKey	(&Throttle, FLAPD,		PULSE+DX52);
-	MapKeyR	(&Throttle, FLAPD,		DX53);
+	MapKey	(&Throttle, FLAPU,		PULSE+DX52);
+	MapKeyR	(&Throttle, FLAPU,		DX53);
+	MapKey	(&Throttle, FLAPD,		PULSE+DX54);
+	MapKeyR	(&Throttle, FLAPD,		DX55);
 	
-	MapKey	(&Throttle, LTB,		DX54);
+	MapKey	(&Throttle, LTB,		DX56);
 	
-	MapKey	(&Throttle, EFLNORM,	PULSE+DX55);
-	MapKey	(&Throttle, EFLOVER,	PULSE+DX56);
+	MapKey	(&Throttle, EFLNORM,	PULSE+DX57);
+	MapKey	(&Throttle, EFLOVER,	PULSE+DX58);
 	
-	MapKey	(&Throttle, EFRNORM,	PULSE+DX57);
-	MapKey	(&Throttle, EFROVER,	PULSE+DX58);
+	MapKey	(&Throttle, EFRNORM,	PULSE+DX59);
+	MapKey	(&Throttle, EFROVER,	PULSE+DX60);
 	
-	MapKey	(&Throttle, EOLIGN,		DX59);
-	MapKey	(&Throttle, EOLNORM,	PULSE+DX60);
-	MapKey	(&Throttle, EOLMOTOR,	PULSE+DX61);
+	MapKey	(&Throttle, EOLIGN,		DX61);
+	MapKey	(&Throttle, EOLNORM,	PULSE+DX62);
+	MapKey	(&Throttle, EOLMOTOR,	PULSE+DX63);
 	
-	MapKey	(&Throttle, EORIGN,		DX62);
-	MapKey	(&Throttle, EORNORM,	PULSE+DX63);
-	MapKey	(&Throttle, EORMOTOR,	PULSE+DX64);
+	MapKey	(&Throttle, EORIGN,		DX64);
+	MapKey	(&Throttle, EORNORM,	PULSE+DX65);
+	MapKey	(&Throttle, EORMOTOR,	PULSE+DX66);
 	
-	MapKey	(&Throttle, APUON,		PULSE+DX65);
-	MapKey	(&Throttle, APUOFF,		PULSE+DX66);
-	MapKey	(&Throttle, LDGH,		DX67);
-	MapKey	(&Throttle, EACON,		PULSE+DX68);
-	MapKey	(&Throttle, EACOFF,		PULSE+DX69);
-	MapKey	(&Throttle, RDRNRM,		PULSE+DX70);
-	MapKey	(&Throttle, RDRDIS,		PULSE+DX71);
+	MapKey	(&Throttle, APUON,		PULSE+DX67);
+	MapKey	(&Throttle, APUOFF,		PULSE+DX68);
+	MapKey	(&Throttle, LDGH,		DX69);
+	MapKey	(&Throttle, EACON,		PULSE+DX70);
+	MapKey	(&Throttle, EACOFF,		PULSE+DX71);
+	MapKey	(&Throttle, RDRNRM,		PULSE+DX72);
+	MapKey	(&Throttle, RDRDIS,		PULSE+DX73);
 	
-	MapKey	(&Throttle, APPAT,		PULSE+DX72);
-	MapKey	(&Throttle, APAH,		PULSE+DX73);
-	MapKey	(&Throttle, APALT,		PULSE+DX74);
+	MapKey	(&Throttle, APPAT,		PULSE+DX74);
+	MapKey	(&Throttle, APAH,		PULSE+DX75);
+	MapKey	(&Throttle, APALT,		PULSE+DX76);
 	
-	MapKey	(&Throttle, APDIS,		CHAIN(UP+DX75, UP+DX82));
-	MapKeyR	(&Throttle, APDIS,		CHAIN(DOWN+DX75, DOWN+DX82));
+	MapKey	(&Throttle, APDIS,		CHAIN(UP+DX77, UP+DX78));
+	MapKeyR	(&Throttle, APDIS,		CHAIN(DOWN+DX77, DOWN+DX78));
 	
-	MapKey	(&Throttle, IDLERON,	PULSE+DX76);
-	MapKeyR	(&Throttle, IDLERON,	PULSE+DX77);
-	MapKey	(&Throttle, IDLELON,	PULSE+DX78);
-	MapKeyR	(&Throttle, IDLELON,	PULSE+DX79);
+	MapKey	(&Throttle, IDLERON,	PULSE+DX79);
+	MapKeyR	(&Throttle, IDLERON,	PULSE+DX80);
+	MapKey	(&Throttle, IDLELON,	PULSE+DX81);
+	MapKeyR	(&Throttle, IDLELON,	PULSE+DX82);
 	
 	//DX106+
 	MapAxis		(&Throttle, SCX, DX_XROT_AXIS, AXIS_NORMAL, MAP_ABSOLUTE);
