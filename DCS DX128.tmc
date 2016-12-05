@@ -129,9 +129,9 @@ int main()
 	MapKeyR	(&Throttle, APDIS,		CHAIN(DOWN+DX77, DOWN+DX78));
 	
 	MapKey	(&Throttle, IDLERON,	PULSE+DX79);
-	MapKeyR	(&Throttle, IDLERON,	PULSE+DX80);
+	MapKey	(&Throttle, IDLEROFF,	PULSE+DX80);
 	MapKey	(&Throttle, IDLELON,	PULSE+DX81);
-	MapKeyR	(&Throttle, IDLELON,	PULSE+DX82);
+	MapKey	(&Throttle, IDLELOFF,	PULSE+DX82);
 	
 	//DX106+
 	MapAxis		(&Throttle, SCX, DX_XROT_AXIS, AXIS_NORMAL, MAP_ABSOLUTE);
