@@ -52,11 +52,11 @@ int main()
 	
 	//DX100+
 	MapAxis		(&Joystick, JOYX, DX_X_AXIS, AXIS_NORMAL, MAP_ABSOLUTE);
-	SetSCurve	(&Joystick, JOYX, 0, 1, 0, 1, 0);
+	SetSCurve	(&Joystick, JOYX, 0, 0, 0, 0, 0);
 	KeyAxis		(&Joystick, JOYX, 0, AXMAP1(LIST(0,1,99,100), DX100, DX101, PULSE+DX102));
 	
 	MapAxis		(&Joystick, JOYY, DX_Y_AXIS, AXIS_NORMAL, MAP_ABSOLUTE);
-	SetSCurve	(&Joystick, JOYY, 0, 1, 0, 0, 0);
+	SetSCurve	(&Joystick, JOYY, 0, 0, 0, 0, 0);
 	KeyAxis		(&Joystick, JOYY, 0, AXMAP1(LIST(0,1,99,100), DX103, DX104, PULSE+DX105));
 	
 	printf ("\xaJoystick Mapping Loaded \xa");
